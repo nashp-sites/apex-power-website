@@ -1,4 +1,3 @@
-
 <!--
 Title: Apex Power LLC
 Link: /apex
@@ -490,6 +489,450 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
       overflow: hidden;
       background: #fff;
     }
+    .apex-site .disclosure-list {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .apex-site .disclosure {
+      background: #0d1318;
+      border: 0;
+    }
+    .apex-site .disclosure summary {
+      min-height: 92px;
+      display: grid;
+      grid-template-columns: 38px minmax(0,1fr) 28px;
+      gap: 15px;
+      align-items: center;
+      padding: 22px 24px;
+      cursor: pointer;
+      list-style: none;
+    }
+    .apex-site .disclosure summary::-webkit-details-marker { display: none; }
+    .apex-site .disclosure summary::after {
+      content: "+";
+      color: var(--blue-bright);
+      font-size: 1.7rem;
+      font-weight: 300;
+      line-height: 1;
+      text-align: right;
+    }
+    .apex-site .disclosure[open] summary::after { content: "−"; }
+    .apex-site .disclosure-number {
+      color: var(--blue-bright);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+    .apex-site .disclosure h3 {
+      margin: 0;
+      font-size: clamp(1rem,2vw,1.3rem);
+      line-height: 1.08;
+      text-transform: uppercase;
+    }
+    .apex-site .disclosure-body {
+      padding: 0 80px 25px 77px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .apex-site .disclosure-body p { margin: 0; }
+    .apex-site .project-grid.compact {
+      grid-template-columns: repeat(5,minmax(310px,1fr));
+      gap: 12px;
+      overflow-x: auto;
+      padding: 0 0 14px;
+      scroll-snap-type: x mandatory;
+      scrollbar-color: var(--blue) #d5dce0;
+    }
+    .apex-site .project-grid.compact .project,
+    .apex-site .project-grid.compact .project:first-child {
+      min-height: 360px;
+      grid-row: auto;
+      scroll-snap-align: start;
+    }
+    .apex-site .section-toggle {
+      background: transparent;
+      border-block: 1px solid #cbd3d8;
+    }
+    .apex-site .section-toggle > summary {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 24px 0;
+      cursor: pointer;
+      list-style: none;
+      color: #0a0d10;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .apex-site .section-toggle > summary::-webkit-details-marker { display: none; }
+    .apex-site .section-toggle > summary::after { content: "Open +"; color: var(--blue-deep); }
+    .apex-site .section-toggle[open] > summary::after { content: "Close −"; }
+    .apex-site .section-toggle-content { padding: 12px 0 28px; }
+    .apex-site .career-list { display: grid; gap: 1px; background: rgba(255,255,255,.14); }
+    .apex-site .career-list .disclosure-body { padding-bottom: 28px; }
+    .apex-site .career-detail {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .apex-site .career-detail img { width: 100%; height: 130px; object-fit: cover; }
+    .apex-site > .photo-rail,
+    .apex-site > .section { display: none; }
+    .apex-site .hero { min-height: 520px; }
+    .apex-site .experience {
+      padding: 72px 0 84px;
+      background: #edf1f3;
+      color: #0a0d10;
+    }
+    .apex-site .experience-head {
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(280px,.9fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    .apex-site .experience-head h2 { max-width: 760px; }
+    .apex-site .experience-head p:last-child { margin: 0; color: #55616a; }
+    .apex-site .experience-nav {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 0 0 12px;
+      border-bottom: 1px solid #bdc7cd;
+      scrollbar-width: none;
+      background: #edf1f3;
+    }
+    .apex-site .experience-nav::-webkit-scrollbar,
+    .apex-site .project-grid.compact::-webkit-scrollbar,
+    .apex-site .trust-grid::-webkit-scrollbar,
+    .apex-site .systems-bar::-webkit-scrollbar { display: none; }
+    .apex-site .project-grid.compact,
+    .apex-site .trust-grid,
+    .apex-site .systems-bar { scrollbar-width: none; }
+    .apex-site .scroll-indicator {
+      position: relative;
+      height: 4px;
+      margin: 9px 0 0;
+      overflow: hidden;
+      background: #c4cdd2;
+    }
+    .apex-site .scroll-indicator span {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: var(--thumb-width,32%);
+      background: #087fe8;
+      transform: translateX(var(--thumb-x,0));
+      transition: transform .08s linear;
+    }
+    .apex-site .trust-strip .scroll-indicator {
+      display: none;
+      width: min(calc(100% - 40px),1120px);
+      margin: 0 auto 12px;
+      background: #273139;
+    }
+    .apex-site .experience-tab {
+      flex: 0 0 auto;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid #aeb9c0;
+      background: transparent;
+      color: #23303a;
+      cursor: pointer;
+      font: inherit;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .apex-site .experience-tab[aria-selected="true"] {
+      background: #087fe8;
+      border-color: #087fe8;
+      color: #fff;
+    }
+    .apex-site .experience-panel {
+      min-height: 560px;
+      padding-top: 30px;
+    }
+    .apex-site .experience-panel[hidden] { display: none; }
+    .apex-site .experience-panel .disclosure-list,
+    .apex-site .experience-panel .career-list { border-color: #c9d1d6; background: #c9d1d6; }
+    .apex-site .experience-panel .disclosure { background: #fff; color: #0a0d10; }
+    .apex-site .experience-panel .disclosure-body { color: #55616a; }
+    .apex-site .systems-bar {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 1px;
+      margin-top: 22px;
+      background: #c9d1d6;
+    }
+    .apex-site .systems-bar div { min-height: 92px; padding: 18px; background: #fff; }
+    .apex-site .systems-bar small { display: block; color: #087fe8; font-size: .65rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .apex-site .systems-bar strong { display: block; margin-top: 8px; font-size: .84rem; line-height: 1.15; }
+    .apex-site .apex-proof {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 22px;
+    }
+    .apex-site .proof-lead {
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 34px;
+      background:
+        linear-gradient(180deg,transparent 20%,rgba(3,10,16,.92) 100%),
+        url("assets/generator-load-bank-setup.jpg") center / cover;
+      color: #fff;
+    }
+    .apex-site .proof-lead h3 { margin: 0; font-size: clamp(2rem,4vw,3.5rem); line-height: .92; text-transform: uppercase; }
+    .apex-site .proof-lead p { margin: 14px 0 0; color: #d5dde2; }
+    .apex-site .proof-list { background: #fff; padding: 12px 30px; }
+    .apex-site .proof-list .reason { padding: 22px 0; }
+    .apex-site .project-grid.compact.light .project { color: #fff; }
+    .apex-site .update-compact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #c9d1d6;
+    }
+    .apex-site .update-image {
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 34px;
+      background:
+        linear-gradient(180deg,transparent 30%,rgba(0,49,94,.95) 100%),
+        url("assets/field-crew-unloading.jpg") center / cover;
+      color: #fff;
+    }
+    .apex-site .update-image h3 { margin: 0; font-size: 2rem; text-transform: uppercase; }
+    .apex-site .update-image p { color: #d6e2ea; }
+    .apex-site .update-action { display: grid; place-items: center; padding: 34px; text-align: center; }
+    .apex-site .update-action p { max-width: 420px; color: #55616a; }
+    .apex-site .experience .button { border-color: #87949d; color: #0a0d10; }
+    .apex-site .experience .button.primary { color: #fff; border-color: #087fe8; }
+    .apex-site .contact.compact-contact { padding: 58px 0; }
+    .apex-site .compact-contact .contact-grid { grid-template-columns: 1fr auto; align-items: center; }
+    .apex-site .compact-contact h2 { font-size: clamp(2.2rem,4vw,4rem); }
+    .apex-site .compact-contact .contact-card {
+      min-width: 320px;
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 9px 24px;
+      align-items: center;
+    }
+    .apex-site .compact-contact .contact-card::before { grid-column: 1 / -1; margin-bottom: 5px; }
+    .apex-site .compact-contact .contact-card span,
+    .apex-site .compact-contact .contact-card strong { margin: 0 !important; }
+    .apex-site .compact-contact .contact-card strong { text-align: right; }
+    .apex-site > :not(.touch-app) { display: none !important; }
+    html:has(.touch-app),
+    body:has(.touch-app) { height: 100%; overflow: hidden !important; }
+    .apex-site.touch-mode {
+      height: 100svh;
+      min-height: 560px;
+      overflow: hidden;
+    }
+    .apex-site .touch-app {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 560px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg,rgba(5,9,13,.98),rgba(5,9,13,.72) 62%,rgba(5,9,13,.5)),
+        url("assets/field-power-testing.jpg") center / cover no-repeat;
+    }
+    .apex-site .touch-header {
+      position: relative;
+      z-index: 4;
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: min(calc(100% - 32px),1120px);
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+    .apex-site .touch-header img { display: block; width: auto; height: 48px; }
+    .apex-site .touch-call {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 16px;
+      background: #087fe8;
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .apex-site .touch-home {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 32px),1120px);
+      min-height: 0;
+      display: grid;
+      grid-template-columns: minmax(0,1.05fr) minmax(420px,.95fr);
+      gap: clamp(28px,5vw,72px);
+      align-items: center;
+      margin: 0 auto;
+      padding: 24px 0 30px;
+    }
+    .apex-site .touch-intro h1 {
+      max-width: 650px;
+      font-size: clamp(3rem,7vw,6.4rem);
+      line-height: .86;
+    }
+    .apex-site .touch-intro h1 span { display: block; color: #10a4ff; }
+    .apex-site .touch-intro p:last-child {
+      max-width: 580px;
+      margin: 22px 0 0;
+      color: #d4dce1;
+      font-size: clamp(.92rem,1.7vw,1.18rem);
+    }
+    .apex-site .touch-menu {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 10px;
+    }
+    .apex-site .touch-target {
+      min-height: 108px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.24);
+      background: rgba(8,14,20,.84);
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+      backdrop-filter: blur(10px);
+    }
+    .apex-site .touch-target:hover,
+    .apex-site .touch-target:focus-visible { background: #087fe8; border-color: #087fe8; }
+    .apex-site .touch-target small { color: #6fc6ff; font-size: .62rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .apex-site .touch-target strong { font-size: clamp(1rem,2vw,1.35rem); line-height: 1; text-transform: uppercase; }
+    .apex-site .touch-target strong::after { margin-left: 8px; content: "›"; color: #10a4ff; }
+    .apex-site .touch-panel {
+      position: absolute;
+      z-index: 8;
+      inset: 68px 0 0;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background: #edf1f3;
+      color: #0a0d10;
+      transform: translateY(105%);
+      visibility: hidden;
+      transition: transform .26s ease,visibility 0s linear .26s;
+    }
+    .apex-site .touch-panel.is-open {
+      transform: translateY(0);
+      visibility: visible;
+      transition: transform .26s ease;
+    }
+    .apex-site .touch-panel-head,
+    .apex-site .touch-panel-foot {
+      width: min(calc(100% - 32px),960px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin: 0 auto;
+    }
+    .apex-site .touch-panel-head { min-height: 72px; border-bottom: 1px solid #bdc7cd; }
+    .apex-site .touch-panel-head div span { color: #087fe8; font-size: .62rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .apex-site .touch-panel-head h2 { margin-top: 4px; font-size: clamp(1.55rem,4vw,2.8rem); line-height: .94; }
+    .apex-site .touch-close {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      border: 1px solid #9daab2;
+      background: transparent;
+      color: #0a0d10;
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+    .apex-site .touch-slides {
+      position: relative;
+      width: min(calc(100% - 32px),960px);
+      min-height: 0;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .apex-site .touch-slide {
+      position: absolute;
+      inset: 18px 0;
+      display: grid;
+      grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr);
+      gap: clamp(24px,5vw,64px);
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(40px);
+      transition: opacity .2s ease,transform .2s ease;
+    }
+    .apex-site .touch-slide.is-active { opacity: 1; pointer-events: auto; transform: none; }
+    .apex-site .touch-slide-number { color: #087fe8; font-size: clamp(3.2rem,9vw,7rem); font-weight: 950; line-height: .8; letter-spacing: -.07em; }
+    .apex-site .touch-slide-copy h3 { margin: 0; font-size: clamp(2rem,5vw,4.4rem); line-height: .9; letter-spacing: -.05em; text-transform: uppercase; }
+    .apex-site .touch-slide-copy p { max-width: 620px; margin: 20px 0 0; color: #52606a; font-size: clamp(.95rem,2vw,1.22rem); }
+    .apex-site .touch-slide-image {
+      height: min(44vh,390px);
+      min-height: 220px;
+      overflow: hidden;
+      background: #0d1419;
+    }
+    .apex-site .touch-slide-image img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .apex-site .touch-panel-foot { min-height: 72px; border-top: 1px solid #bdc7cd; }
+    .apex-site .touch-progress { color: #52606a; font-size: .72rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .apex-site .touch-controls { display: flex; gap: 8px; }
+    .apex-site .touch-control {
+      min-width: 90px;
+      min-height: 42px;
+      border: 1px solid #87949d;
+      background: transparent;
+      color: #0a0d10;
+      cursor: pointer;
+      font: inherit;
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .apex-site .touch-control.next { background: #087fe8; border-color: #087fe8; color: #fff; }
+    .apex-site .touch-control:disabled { opacity: .28; cursor: default; }
+    .apex-site .touch-contact-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .apex-site .touch-contact-actions a {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      background: #087fe8;
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
     .apex-site .feed-placeholder strong { display: block; margin-bottom: 8px; font-size: 1.1rem; }
     .apex-site .feed-placeholder span { display: block; max-width: 440px; color: #60707b; font-size: .9rem; }
     .apex-site .careers {
@@ -893,24 +1336,228 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
       .apex-site .equipment { grid-template-columns: 1fr; }
       .apex-site .facebook-frame { height: 500px; }
     }
+    @media (max-width:760px) {
+      .apex-site .disclosure-list { grid-template-columns: 1fr; }
+      .apex-site .disclosure summary { min-height: 78px; padding: 18px 16px; }
+      .apex-site .disclosure-body { padding: 0 58px 20px 69px; }
+      .apex-site .project-grid.compact { grid-template-columns: repeat(5,82vw); }
+      .apex-site .project-grid.compact .project,
+      .apex-site .project-grid.compact .project:first-child { min-height: 330px; }
+      .apex-site .career-detail { grid-template-columns: 1fr; }
+      .apex-site .career-detail img { height: 190px; }
+      .apex-site .hero { min-height: 470px; }
+      .apex-site .hero-copy { padding: 58px 0 70px; }
+      .apex-site .experience { padding: 58px 0 68px; }
+      .apex-site .experience-head { grid-template-columns: 1fr; gap: 18px; }
+      .apex-site .experience-panel { min-height: 520px; }
+      .apex-site .systems-bar { grid-template-columns: repeat(2,1fr); }
+      .apex-site .apex-proof,
+      .apex-site .update-compact { grid-template-columns: 1fr; }
+      .apex-site .proof-lead,
+      .apex-site .update-image { min-height: 330px; }
+      .apex-site .trust-grid {
+        grid-template-columns: repeat(3,82vw);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+      .apex-site .trust-item { min-height: 112px; scroll-snap-align: start; }
+      .apex-site .trust-strip .scroll-indicator { display: block; }
+      .apex-site .systems-bar {
+        grid-template-columns: repeat(5,68vw);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+      .apex-site .systems-bar div { scroll-snap-align: start; }
+      .apex-site .compact-contact .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .apex-site .compact-contact .contact-card { min-width: 0; width: 100%; }
+      .apex-site .touch-header { min-height: 62px; }
+      .apex-site .touch-header img { height: 40px; max-width: 190px; object-fit: contain; }
+      .apex-site .touch-call { min-height: 38px; padding: 0 12px; }
+      .apex-site .touch-home {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 18px;
+        align-items: end;
+        padding: 18px 0 20px;
+      }
+      .apex-site .touch-intro h1 { font-size: clamp(2.55rem,11vw,4.1rem); }
+      .apex-site .touch-intro p:last-child { margin-top: 12px; font-size: .86rem; line-height: 1.35; }
+      .apex-site .touch-menu { gap: 7px; }
+      .apex-site .touch-target { min-height: 76px; padding: 12px; }
+      .apex-site .touch-target strong { font-size: .92rem; }
+      .apex-site .touch-panel { inset-top: 62px; inset: 62px 0 0; }
+      .apex-site .touch-panel-head { min-height: 66px; }
+      .apex-site .touch-slide {
+        inset: 12px 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 14px;
+        align-content: center;
+      }
+      .apex-site .touch-slide-number { font-size: 2.5rem; }
+      .apex-site .touch-slide-copy h3 { font-size: clamp(1.7rem,8vw,2.7rem); }
+      .apex-site .touch-slide-copy p { margin-top: 12px; font-size: .9rem; }
+      .apex-site .touch-slide-image { height: min(35vh,280px); min-height: 170px; }
+      .apex-site .touch-panel-foot { min-height: 64px; }
+      .apex-site .touch-control { min-width: 74px; min-height: 40px; }
+    }
     @media (prefers-reduced-motion:reduce) {
       .apex-site *,
       .apex-site *::before,
       .apex-site *::after { scroll-behavior: auto !important; transition: none !important; }
     }
+    /* Touch-led layout: vertical page movement only; no horizontal swiping. */
+    html:has(.touch-app),
+    body:has(.touch-app) { height: auto; overflow-x: hidden !important; overflow-y: auto !important; }
+    .apex-site.touch-mode { height: auto; min-height: 0; overflow: clip; }
+    .apex-site > .touch-app { display: none !important; }
+    .apex-site > .topbar { display: flex !important; }
+    .apex-site > .hero { display: grid !important; }
+    .apex-site > .trust-strip,
+    .apex-site > .experience,
+    .apex-site > .contact { display: block !important; }
+    .apex-site .experience-nav {
+      position: static;
+      flex-wrap: wrap;
+      overflow: visible;
+    }
+    .apex-site .experience-tab { flex: 1 1 150px; }
+    .apex-site .scroll-indicator { display: none !important; }
+    .apex-site .project-grid.compact {
+      display: block;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+    .apex-site .project-grid.compact .project,
+    .apex-site .project-grid.compact .project:first-child { min-height: 430px; display: none; }
+    .apex-site .project-grid.compact .project.is-active { display: flex; }
+    .apex-site .project-touch-controls {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-top: 14px;
+    }
+    .apex-site .project-touch-controls button {
+      min-width: 104px;
+      min-height: 46px;
+      border: 1px solid #8d9aa3;
+      background: #fff;
+      color: #0a0d10;
+      cursor: pointer;
+      font: inherit;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .apex-site .project-touch-controls button:last-child { background: #087fe8; border-color: #087fe8; color: #fff; }
+    .apex-site .project-count { color: #52606a; font-size: .7rem; font-weight: 900; letter-spacing: .1em; text-align: center; text-transform: uppercase; }
+    @media (max-width:760px) {
+      .apex-site .trust-grid { grid-template-columns: 1fr; overflow: visible; }
+      .apex-site .trust-item { min-height: 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .apex-site .systems-bar { grid-template-columns: repeat(2,1fr); overflow: visible; }
+      .apex-site .experience-tab { flex: 1 1 calc(50% - 8px); }
+      .apex-site .project-grid.compact .project,
+      .apex-site .project-grid.compact .project:first-child { min-height: 380px; }
+      .apex-site .project-touch-controls button { min-width: 88px; }
+    }
   </style>
 </head>
 <body>
-  <main class="apex-site">
+  <main class="apex-site touch-mode">
+    <div class="touch-app">
+      <header class="touch-header">
+        <img src="assets/apex-power-logo.png" alt="Apex Power">
+        <a class="touch-call" href="tel:+19852281939">Call 985-228-1939</a>
+      </header>
+      <div class="touch-home">
+        <div class="touch-intro">
+          <p class="eyebrow">Reliable power. Proven performance.</p>
+          <h1>Temporary <span>Power.</span> Climate Control.</h1>
+          <p>Industrial field support for temporary power, generation equipment, electrical distribution, testing, diagnostics, repair, and commercial HVAC.</p>
+        </div>
+        <div class="touch-menu" aria-label="Apex Power information">
+          <button class="touch-target" type="button" data-touch-panel="touch-services"><small>01 / Capabilities</small><strong>Services</strong></button>
+          <button class="touch-target" type="button" data-touch-panel="touch-projects"><small>02 / Field work</small><strong>Projects</strong></button>
+          <button class="touch-target" type="button" data-touch-panel="touch-standard"><small>03 / The standard</small><strong>Why Apex</strong></button>
+          <button class="touch-target" type="button" data-touch-panel="touch-updates"><small>04 / In progress</small><strong>Updates</strong></button>
+          <button class="touch-target" type="button" data-touch-panel="touch-careers"><small>05 / Join the team</small><strong>Careers</strong></button>
+          <button class="touch-target" type="button" data-touch-panel="touch-contact"><small>06 / Start here</small><strong>Contact</strong></button>
+        </div>
+      </div>
+
+      <section class="touch-panel" id="touch-services" aria-label="Services">
+        <div class="touch-panel-head"><div><span>Apex Power</span><h2>Services</h2></div><button class="touch-close" type="button" aria-label="Close services">×</button></div>
+        <div class="touch-slides">
+          <article class="touch-slide is-active"><div class="touch-slide-number">01</div><div class="touch-slide-copy"><h3>Temporary power deployment</h3><p>Generator setup and deployment, electrical distribution, connections, startup, and coordinated site support.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-number">02</div><div class="touch-slide-copy"><h3>Installation &amp; commissioning</h3><p>Professional startup and commissioning for power-generation and HVAC equipment.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-number">03</div><div class="touch-slide-copy"><h3>Preventive maintenance</h3><p>Planned maintenance and field service built to keep power-generation and HVAC equipment ready.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-number">04</div><div class="touch-slide-copy"><h3>Troubleshooting &amp; diagnostics</h3><p>Electrical, mechanical, engine, and control-system diagnosis under real field conditions.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-number">05</div><div class="touch-slide-copy"><h3>Repairs &amp; overhauls</h3><p>Engine repairs, major service, and overhauls for industrial generation equipment.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-number">06</div><div class="touch-slide-copy"><h3>Testing, paralleling &amp; controls</h3><p>Load testing and system verification, plus PowerCommand, InPower, paralleling, schematics, and wiring support.</p></div></article>
+        </div>
+        <div class="touch-panel-foot"><span class="touch-progress">1 of 6</span><div class="touch-controls"><button class="touch-control prev" type="button">Previous</button><button class="touch-control next" type="button">Next</button></div></div>
+      </section>
+
+      <section class="touch-panel" id="touch-projects" aria-label="Projects">
+        <div class="touch-panel-head"><div><span>From the field</span><h2>Projects</h2></div><button class="touch-close" type="button" aria-label="Close projects">×</button></div>
+        <div class="touch-slides">
+          <article class="touch-slide is-active"><div class="touch-slide-image"><img src="assets/temporary-power-equipment.jpg" alt="Temporary power equipment"></div><div class="touch-slide-copy"><h3>Generator and load-bank setup</h3><p>Temporary generation, electrical distribution, and supporting equipment positioned for coordinated field operation.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-image"><img src="assets/equipment-delivery.jpg" alt="Equipment delivery"></div><div class="touch-slide-copy"><h3>Equipment delivery</h3><p>Field-ready power equipment delivered and positioned for deployment at the customer site.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-image"><img src="assets/generator-load-bank-setup.jpg" alt="Temporary power deployment"></div><div class="touch-slide-copy"><h3>Temporary power equipment</h3><p>Generation and climate-control equipment connected and prepared for testing and verification.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-image"><img src="assets/field-power-testing.jpg" alt="Field power testing"></div><div class="touch-slide-copy"><h3>Field power testing</h3><p>Power equipment and supporting systems tested under real jobsite conditions.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-image"><img src="assets/field-crew-unloading.jpg" alt="Apex field crew"></div><div class="touch-slide-copy"><h3>Hands-on execution</h3><p>Experienced crews managing equipment, site conditions, and the details required for a clean deployment.</p></div></article>
+        </div>
+        <div class="touch-panel-foot"><span class="touch-progress">1 of 5</span><div class="touch-controls"><button class="touch-control prev" type="button">Previous</button><button class="touch-control next" type="button">Next</button></div></div>
+      </section>
+
+      <section class="touch-panel" id="touch-standard" aria-label="Why Apex">
+        <div class="touch-panel-head"><div><span>The Apex standard</span><h2>Why Apex</h2></div><button class="touch-close" type="button" aria-label="Close Why Apex">×</button></div>
+        <div class="touch-slides">
+          <article class="touch-slide is-active"><div class="touch-slide-number">01</div><div class="touch-slide-copy"><h3>Troubleshooting under pressure</h3><p>Experienced technicians work through engine, electrical, mechanical, and controls issues when uptime matters.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-number">02</div><div class="touch-slide-copy"><h3>Clean, safe execution</h3><p>An HSE-minded approach keeps the setup organized, the work disciplined, and safety central.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-number">03</div><div class="touch-slide-copy"><h3>Field-ready expertise</h3><p>Hands-on experience with major generator platforms, natural-gas engines, distribution, schematics, and commercial HVAC.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-number">04</div><div class="touch-slide-copy"><h3>Quality through handoff</h3><p>Apex tests the work, pays attention to details, and stays focused on customer satisfaction through completion.</p></div></article>
+        </div>
+        <div class="touch-panel-foot"><span class="touch-progress">1 of 4</span><div class="touch-controls"><button class="touch-control prev" type="button">Previous</button><button class="touch-control next" type="button">Next</button></div></div>
+      </section>
+
+      <section class="touch-panel" id="touch-updates" aria-label="Updates">
+        <div class="touch-panel-head"><div><span>Live from the field</span><h2>Updates</h2></div><button class="touch-close" type="button" aria-label="Close updates">×</button></div>
+        <div class="touch-slides">
+          <article class="touch-slide is-active"><div class="touch-slide-image"><img src="assets/field-crew-unloading.jpg" alt="Current Apex field work"></div><div class="touch-slide-copy"><h3>Jobs in progress</h3><p>Active projects, equipment deployments, completed work, and behind-the-scenes field progress.</p><div class="touch-contact-actions"><a href="https://www.facebook.com/profile.php?id=61553969862948" target="_blank" rel="noopener noreferrer">Facebook updates</a></div></div></article>
+        </div>
+        <div class="touch-panel-foot"><span class="touch-progress">Current field activity</span><div class="touch-controls"></div></div>
+      </section>
+
+      <section class="touch-panel" id="touch-careers" aria-label="Careers">
+        <div class="touch-panel-head"><div><span>Take pride in the trade</span><h2>Careers</h2></div><button class="touch-close" type="button" aria-label="Close careers">×</button></div>
+        <div class="touch-slides">
+          <article class="touch-slide is-active"><div class="touch-slide-image"><img src="assets/hiring-volvo-technician.jpg" alt="Volvo technician opening"></div><div class="touch-slide-copy"><h3>Volvo Power Generation Technician</h3><p>Denver opening for an experienced power-generation technician with Volvo engine experience.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-image"><img src="assets/hiring-cummins-technician.jpg" alt="Cummins technician opening"></div><div class="touch-slide-copy"><h3>QSK60 Natural Gas Technician</h3><p>Experienced technician with Cummins generator, natural-gas engine, controls, and diagnostic experience.</p></div></article>
+          <article class="touch-slide"><div class="touch-slide-image"><img src="assets/hiring-hvac-technician.jpg" alt="HVAC technician opening"></div><div class="touch-slide-copy"><h3>HVAC Technician</h3><p>Installation, preventive maintenance, troubleshooting, repairs, and commercial or industrial HVAC equipment.</p></div></article>
+        </div>
+        <div class="touch-panel-foot"><span class="touch-progress">1 of 3</span><div class="touch-controls"><button class="touch-control prev" type="button">Previous</button><button class="touch-control next" type="button">Next</button></div></div>
+      </section>
+
+      <section class="touch-panel" id="touch-contact" aria-label="Contact">
+        <div class="touch-panel-head"><div><span>Start a conversation</span><h2>Contact</h2></div><button class="touch-close" type="button" aria-label="Close contact">×</button></div>
+        <div class="touch-slides">
+          <article class="touch-slide is-active"><div class="touch-slide-number">24/7</div><div class="touch-slide-copy"><h3>Keep your operation running.</h3><p>Temporary power, generator field service, testing, troubleshooting, repair, and commercial HVAC support.</p><div class="touch-contact-actions"><a href="tel:+19852281939">Call 985-228-1939</a><a href="mailto:cody@apexpowerllc.org">Email Apex Power</a></div></div></article>
+        </div>
+        <div class="touch-panel-foot"><span class="touch-progress">Field service &amp; travel</span><div class="touch-controls"></div></div>
+      </section>
+    </div>
     <header class="wrap topbar">
       <a class="brand" href="#top" aria-label="Apex Power LLC home">
         <img src="assets/apex-power-logo.png" alt="Apex Power">
       </a>
       <nav aria-label="Page navigation">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#updates">Updates</a>
-        <a href="#careers">Careers</a>
+        <a href="#explore" data-experience-target="services">Services</a>
+        <a href="#explore" data-experience-target="projects">Projects</a>
+        <a href="#explore" data-experience-target="standard">Why Apex</a>
+        <a href="#explore" data-experience-target="careers">Careers</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="header-call" href="tel:+19852281939">Call now</a>
@@ -924,16 +1571,88 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
         <div class="actions">
           <a class="button primary" href="tel:+19852281939">Call 985-228-1939</a>
           <a class="button" href="mailto:cody@apexpowerllc.org?subject=Service%20Request%20for%20Apex%20Power">Request service</a>
-          <a class="button" href="#projects">See our work</a>
+          <a class="button" href="#explore" data-experience-target="projects">See our work</a>
         </div>
       </div>
     </section>
 
     <div class="trust-strip">
-      <div class="wrap trust-grid">
+      <div class="wrap trust-grid" id="scroll-trust">
         <div class="trust-item"><strong>Temporary power</strong><span>Generator setup, deployment, electrical distribution, and testing.</span></div>
         <div class="trust-item"><strong>Generator field service</strong><span>Maintenance, troubleshooting, diagnostics, repair, and commissioning.</span></div>
         <div class="trust-item"><strong>Climate control</strong><span>Commercial and industrial HVAC installation, ducting, maintenance, and repair.</span></div>
+      </div>
+      <div class="scroll-indicator" data-scroll-for="scroll-trust" aria-hidden="true"><span></span></div>
+    </div>
+
+    <div class="experience" id="explore">
+      <div class="wrap">
+        <div class="experience-head">
+          <div><p class="eyebrow">Apex Power</p><h2>Built for demanding field operations.</h2></div>
+          <p>Industrial power, climate control, field service, and technical execution backed by experienced crews and a commitment to reliable performance.</p>
+        </div>
+        <div class="experience-nav" id="scroll-tabs" role="tablist" aria-label="Explore Apex Power">
+          <button class="experience-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-services" id="tab-services">Services</button>
+          <button class="experience-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-projects" id="tab-projects">Projects</button>
+          <button class="experience-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-standard" id="tab-standard">Why Apex</button>
+          <button class="experience-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-updates" id="tab-updates">Updates</button>
+          <button class="experience-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-careers" id="tab-careers">Careers</button>
+        </div>
+        <div class="scroll-indicator" data-scroll-for="scroll-tabs" aria-hidden="true"><span></span></div>
+
+        <section class="experience-panel" id="panel-services" role="tabpanel" aria-labelledby="tab-services">
+          <div class="disclosure-list">
+            <details class="disclosure" open><summary><span class="disclosure-number">01</span><h3>Temporary power deployment</h3></summary><div class="disclosure-body"><p>Generator setup and deployment, electrical distribution, connections, startup, and coordinated site support.</p></div></details>
+            <details class="disclosure"><summary><span class="disclosure-number">02</span><h3>Installation &amp; commissioning</h3></summary><div class="disclosure-body"><p>Professional startup and commissioning for power-generation and HVAC equipment.</p></div></details>
+            <details class="disclosure"><summary><span class="disclosure-number">03</span><h3>Preventive maintenance</h3></summary><div class="disclosure-body"><p>Planned maintenance and field service built to keep power-generation and HVAC equipment ready.</p></div></details>
+            <details class="disclosure"><summary><span class="disclosure-number">04</span><h3>Troubleshooting &amp; diagnostics</h3></summary><div class="disclosure-body"><p>Electrical, mechanical, engine, and control-system diagnosis under real field conditions.</p></div></details>
+            <details class="disclosure"><summary><span class="disclosure-number">05</span><h3>Repairs &amp; overhauls</h3></summary><div class="disclosure-body"><p>Engine repairs, major service, and overhauls for industrial generation equipment.</p></div></details>
+            <details class="disclosure"><summary><span class="disclosure-number">06</span><h3>Testing, paralleling &amp; controls</h3></summary><div class="disclosure-body"><p>Load testing and system verification, plus PowerCommand, InPower, paralleling, schematics, and wiring support.</p></div></details>
+          </div>
+          <div class="systems-bar" id="scroll-systems">
+            <div><small>Natural gas</small><strong>Cummins QSK60 engines</strong></div><div><small>Cummins</small><strong>QSK, NT, NTA &amp; K-series</strong></div><div><small>Controls</small><strong>PowerCommand &amp; InPower</strong></div><div><small>Volvo</small><strong>TAD &amp; TWD engine series</strong></div><div><small>Climate</small><strong>Commercial &amp; industrial HVAC</strong></div>
+          </div>
+          <div class="scroll-indicator" data-scroll-for="scroll-systems" aria-hidden="true"><span></span></div>
+        </section>
+
+        <section class="experience-panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" hidden>
+          <div class="project-grid compact light" id="scroll-projects">
+            <article class="project is-active"><img src="assets/temporary-power-equipment.jpg" alt="Temporary power equipment connected at an Apex Power job site"><div><small>On site</small><h3>Generator and load-bank setup</h3></div></article>
+            <article class="project"><img src="assets/equipment-delivery.jpg" alt="Large power equipment being delivered by trailer"><div><small>Deployment</small><h3>Equipment delivery</h3></div></article>
+            <article class="project"><img src="assets/generator-load-bank-setup.jpg" alt="Generator and load-bank equipment installed beside a commercial building"><div><small>In progress</small><h3>Temporary power equipment</h3></div></article>
+            <article class="project"><img src="assets/field-power-testing.jpg" alt="Power-testing equipment outside a commercial building"><div><small>Testing</small><h3>Field power testing</h3></div></article>
+            <article class="project"><img src="assets/field-crew-unloading.jpg" alt="Field crew unloading heavy equipment"><div><small>Field work</small><h3>Hands-on execution</h3></div></article>
+          </div>
+          <div class="project-touch-controls" aria-label="Project gallery controls"><button type="button" id="project-previous">Previous</button><span class="project-count">1 of 5</span><button type="button" id="project-next">Next</button></div>
+        </section>
+
+        <section class="experience-panel" id="panel-standard" role="tabpanel" aria-labelledby="tab-standard" hidden>
+          <div class="apex-proof">
+            <div class="proof-lead"><p class="eyebrow">The Apex standard</p><h3>Show up ready. Get it right.</h3><p>Preparation, judgment, communication, safety, and pride in every detail.</p></div>
+            <div class="proof-list">
+              <article class="reason"><b>01</b><div><h3>Troubleshooting under pressure</h3><p>Experienced technicians work through engine, electrical, mechanical, and controls issues when uptime matters.</p></div></article>
+              <article class="reason"><b>02</b><div><h3>Clean, safe execution</h3><p>An HSE-minded approach keeps the setup organized, the work disciplined, and safety central.</p></div></article>
+              <article class="reason"><b>03</b><div><h3>Field-ready expertise</h3><p>Hands-on experience with major generator platforms, natural-gas engines, distribution, schematics, and commercial HVAC.</p></div></article>
+              <article class="reason"><b>04</b><div><h3>Quality through handoff</h3><p>Apex tests the work, pays attention to details, and stays focused on customer satisfaction.</p></div></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="experience-panel" id="panel-updates" role="tabpanel" aria-labelledby="tab-updates" hidden>
+          <div class="update-compact">
+            <div class="update-image"><h3>Jobs in progress</h3><p>Active projects, equipment deployments, completed work, and behind-the-scenes field progress.</p></div>
+            <div class="update-action"><div><p class="eyebrow">Live from the field</p><h3>Follow current work.</h3><p>Apex publishes its newest field activity on Facebook, keeping this overview focused and fast.</p><a class="button primary" href="https://www.facebook.com/profile.php?id=61553969862948" target="_blank" rel="noopener noreferrer">View Facebook updates</a></div></div>
+          </div>
+        </section>
+
+        <section class="experience-panel" id="panel-careers" role="tabpanel" aria-labelledby="tab-careers" hidden>
+          <div class="career-list">
+            <details class="disclosure"><summary><span class="disclosure-number">Denver</span><h3>Volvo Power Generation Technician</h3></summary><div class="disclosure-body career-detail"><img src="assets/hiring-volvo-technician.jpg" alt="Volvo technician opening"><p>Experienced power-generation technician with Volvo engine experience. Requirements, compensation, and application details are included in the announcement.</p></div></details>
+            <details class="disclosure"><summary><span class="disclosure-number">Open</span><h3>QSK60 Natural Gas Technician</h3></summary><div class="disclosure-body career-detail"><img src="assets/hiring-cummins-technician.jpg" alt="Cummins technician opening"><p>Experienced technician with Cummins generator and natural-gas engine experience, controls knowledge, and strong diagnostic skills.</p></div></details>
+            <details class="disclosure"><summary><span class="disclosure-number">Open</span><h3>HVAC Technician</h3></summary><div class="disclosure-body career-detail"><img src="assets/hiring-hvac-technician.jpg" alt="HVAC technician opening"><p>HVAC technician focused on installation, preventive maintenance, troubleshooting, repairs, and commercial or industrial equipment.</p></div></details>
+          </div>
+          <div class="actions"><a class="button primary" href="tel:+19852281939">Call 985-228-1939</a><a class="button" href="mailto:cody@apexpowerllc.org?subject=Apex%20Power%20Career%20Inquiry">Email about careers</a></div>
+        </section>
       </div>
     </div>
 
@@ -961,13 +1680,13 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
           </div>
           <p class="section-intro">From temporary-power deployment to engine, electrical, mechanical, or controls troubleshooting, Apex provides experienced field support for demanding jobsites.</p>
         </div>
-        <div class="service-grid">
-          <article class="service"><span class="service-number">01</span><h3>Temporary power deployment</h3><p>Generator setup and deployment, electrical distribution, connections, startup, and site support.</p></article>
-          <article class="service"><span class="service-number">02</span><h3>Installation &amp; commissioning</h3><p>Professional startup and commissioning for power-generation and HVAC equipment.</p></article>
-          <article class="service"><span class="service-number">03</span><h3>Preventive maintenance</h3><p>Planned maintenance and field service for power-generation and HVAC equipment.</p></article>
-          <article class="service"><span class="service-number">04</span><h3>Troubleshooting &amp; diagnostics</h3><p>Electrical, mechanical, engine, and control-system diagnosis under real field conditions.</p></article>
-          <article class="service"><span class="service-number">05</span><h3>Repairs &amp; overhauls</h3><p>Engine repairs, major service, and overhauls for industrial generation equipment.</p></article>
-          <article class="service"><span class="service-number">06</span><h3>Testing, paralleling &amp; controls</h3><p>Load testing and system verification, plus support for PowerCommand, InPower, paralleling, schematics, and wiring.</p></article>
+        <div class="disclosure-list" aria-label="Apex Power services">
+          <details class="disclosure" open><summary><span class="disclosure-number">01</span><h3>Temporary power deployment</h3></summary><div class="disclosure-body"><p>Generator setup and deployment, electrical distribution, connections, startup, and site support.</p></div></details>
+          <details class="disclosure"><summary><span class="disclosure-number">02</span><h3>Installation &amp; commissioning</h3></summary><div class="disclosure-body"><p>Professional startup and commissioning for power-generation and HVAC equipment.</p></div></details>
+          <details class="disclosure"><summary><span class="disclosure-number">03</span><h3>Preventive maintenance</h3></summary><div class="disclosure-body"><p>Planned maintenance and field service for power-generation and HVAC equipment.</p></div></details>
+          <details class="disclosure"><summary><span class="disclosure-number">04</span><h3>Troubleshooting &amp; diagnostics</h3></summary><div class="disclosure-body"><p>Electrical, mechanical, engine, and control-system diagnosis under real field conditions.</p></div></details>
+          <details class="disclosure"><summary><span class="disclosure-number">05</span><h3>Repairs &amp; overhauls</h3></summary><div class="disclosure-body"><p>Engine repairs, major service, and overhauls for industrial generation equipment.</p></div></details>
+          <details class="disclosure"><summary><span class="disclosure-number">06</span><h3>Testing, paralleling &amp; controls</h3></summary><div class="disclosure-body"><p>Load testing and system verification, plus support for PowerCommand, InPower, paralleling, schematics, and wiring.</p></div></details>
         </div>
         <div class="equipment" aria-label="Equipment and systems experience">
           <div><small>Natural gas</small><strong>Cummins QSK60 engines</strong></div>
@@ -1023,7 +1742,7 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
           </div>
           <p class="section-intro">Selected Apex Power field photos showing equipment deployment, site setup, testing, and work in progress.</p>
         </div>
-        <div class="project-grid">
+        <div class="project-grid compact" aria-label="Recent project gallery">
           <article class="project">
             <img src="assets/temporary-power-equipment.jpg" alt="Temporary power equipment connected at an Apex Power job site" loading="lazy" decoding="async">
             <div><small>On site</small><h3>Generator and load-bank setup</h3></div>
@@ -1057,27 +1776,21 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
           </div>
           <p class="section-intro">Follow active projects, equipment deployments, completed jobs, and new openings directly from the field.</p>
         </div>
-        <div class="feed-shell">
-          <div class="feed-copy">
-            <h3>Jobs in progress</h3>
-            <p>See current projects, behind-the-scenes progress, and newly completed work.</p>
-            <a class="button" href="https://www.facebook.com/profile.php?id=61553969862948" target="_blank" rel="noopener noreferrer" aria-label="Apex Power LLC on Facebook">Visit Facebook</a>
+        <details class="section-toggle">
+          <summary>View live job updates from Facebook</summary>
+          <div class="section-toggle-content">
+            <div class="feed-shell">
+              <div class="feed-copy">
+                <h3>Jobs in progress</h3>
+                <p>See current projects, behind-the-scenes progress, and newly completed work.</p>
+                <a class="button" href="https://www.facebook.com/profile.php?id=61553969862948" target="_blank" rel="noopener noreferrer" aria-label="Apex Power LLC on Facebook">Visit Facebook</a>
+              </div>
+              <div class="feed-placeholder">
+                <iframe class="facebook-frame" title="Apex Power Facebook updates" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61553969862948&amp;tabs=timeline&amp;width=500&amp;height=560&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false" width="500" height="560" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+              </div>
+            </div>
           </div>
-          <div class="feed-placeholder">
-            <iframe
-              class="facebook-frame"
-              title="Apex Power Facebook updates"
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61553969862948&amp;tabs=timeline&amp;width=500&amp;height=560&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false"
-              width="500"
-              height="560"
-              scrolling="no"
-              frameborder="0"
-              allowfullscreen="true"
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              loading="lazy"></iframe>
-          </div>
-        </div>
-      </div>
+        </details>
     </section>
 
     <section class="section careers" id="careers">
@@ -1089,19 +1802,10 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
           </div>
           <p class="section-intro">Apex Power is recruiting experienced technicians who value safety, quality, professionalism, troubleshooting, and pride in the trade.</p>
         </div>
-        <div class="career-grid">
-          <article class="career-card">
-            <img src="assets/hiring-volvo-technician.jpg" alt="Apex Power hiring announcement for a Volvo-experienced power generation technician in Denver, Colorado" loading="lazy" decoding="async">
-            <div class="career-meta"><small>Denver, Colorado</small><h3>Volvo Power Generation Technician</h3></div>
-          </article>
-          <article class="career-card">
-            <img src="assets/hiring-cummins-technician.jpg" alt="Apex Power hiring announcement for a Cummins-experienced power generation technician" loading="lazy" decoding="async">
-            <div class="career-meta"><small>Now hiring</small><h3>QSK60 Natural Gas Technician</h3></div>
-          </article>
-          <article class="career-card">
-            <img src="assets/hiring-hvac-technician.jpg" alt="Apex Power hiring announcement for an HVAC technician" loading="lazy" decoding="async">
-            <div class="career-meta"><small>Now hiring</small><h3>HVAC Technician</h3></div>
-          </article>
+        <div class="career-list">
+          <details class="disclosure"><summary><span class="disclosure-number">Denver</span><h3>Volvo Power Generation Technician</h3></summary><div class="disclosure-body career-detail"><img src="assets/hiring-volvo-technician.jpg" alt="Apex Power hiring a Volvo-experienced power generation technician" loading="lazy"><p>Experienced power-generation technician with Volvo engine experience. Open the announcement for requirements, compensation, and application details.</p></div></details>
+          <details class="disclosure"><summary><span class="disclosure-number">Open</span><h3>QSK60 Natural Gas Technician</h3></summary><div class="disclosure-body career-detail"><img src="assets/hiring-cummins-technician.jpg" alt="Apex Power hiring a Cummins-experienced power generation technician" loading="lazy"><p>Experienced power-generation technician with Cummins generator and natural-gas engine experience. Open the announcement for complete requirements.</p></div></details>
+          <details class="disclosure"><summary><span class="disclosure-number">Open</span><h3>HVAC Technician</h3></summary><div class="disclosure-body career-detail"><img src="assets/hiring-hvac-technician.jpg" alt="Apex Power hiring an HVAC technician" loading="lazy"><p>Skilled HVAC technician focused on installation, preventive maintenance, troubleshooting, and commercial or industrial equipment.</p></div></details>
         </div>
         <div class="actions">
           <a class="button primary" href="tel:+19852281939">Call 985-228-1939</a>
@@ -1110,19 +1814,19 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
       </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact compact-contact" id="contact">
       <div class="wrap contact-grid">
         <div>
           <p class="eyebrow" style="color:#fff">Start a conversation</p>
           <h2>Keep your operation running.</h2>
-          <p>Talk directly with Apex Power about temporary-power deployment, electrical distribution, generator field service, load testing, troubleshooting, repair, or commercial HVAC support.</p>
+          <p>Temporary power, generator field service, testing, troubleshooting, repair, and commercial HVAC support.</p>
         </div>
         <div class="contact-card">
           <span>Call</span>
           <strong><a href="tel:+19852281939">985-228-1939</a></strong>
-          <span style="margin-top:18px">Email</span>
+          <span>Email</span>
           <strong><a href="mailto:cody@apexpowerllc.org">cody@apexpowerllc.org</a></strong>
-          <span style="margin-top:18px">Service</span>
+          <span>Service</span>
           <strong>Field service &amp; travel</strong>
         </div>
       </div>
@@ -1174,6 +1878,80 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
       } else {
         applyApexIdentity();
       }
+
+      const tabs = Array.from(document.querySelectorAll(".experience-tab"));
+      const panels = Array.from(document.querySelectorAll(".experience-panel"));
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
+          panels.forEach((panel) => {
+            panel.hidden = panel.id !== tab.getAttribute("aria-controls");
+          });
+          requestAnimationFrame(syncScrollIndicators);
+        });
+      });
+      document.querySelectorAll("[data-experience-target]").forEach((link) => {
+        link.addEventListener("click", () => {
+          const target = document.getElementById(`tab-${link.dataset.experienceTarget}`);
+          if (target) target.click();
+        });
+      });
+      const syncScrollIndicators = () => {
+        document.querySelectorAll("[data-scroll-for]").forEach((indicator) => {
+          const scroller = document.getElementById(indicator.dataset.scrollFor);
+          const thumb = indicator.querySelector("span");
+          if (!scroller || !thumb) return;
+          const update = () => {
+            if (!scroller.clientWidth || !scroller.scrollWidth) return;
+            const visibleRatio = Math.min(1, scroller.clientWidth / scroller.scrollWidth);
+            const maxScroll = Math.max(1, scroller.scrollWidth - scroller.clientWidth);
+            const travel = indicator.clientWidth * (1 - visibleRatio);
+            indicator.style.setProperty("--thumb-width", `${visibleRatio * 100}%`);
+            indicator.style.setProperty("--thumb-x", `${(scroller.scrollLeft / maxScroll) * travel}px`);
+            indicator.hidden = visibleRatio >= .995;
+          };
+          scroller.addEventListener("scroll", update, { passive: true });
+          update();
+        });
+      };
+      window.addEventListener("resize", syncScrollIndicators);
+      syncScrollIndicators();
+
+      document.querySelectorAll(".touch-panel").forEach((panel) => {
+        const slides = Array.from(panel.querySelectorAll(".touch-slide"));
+        const progress = panel.querySelector(".touch-progress");
+        const previous = panel.querySelector(".touch-control.prev");
+        const next = panel.querySelector(".touch-control.next");
+        let current = 0;
+        const show = (index) => {
+          current = Math.max(0,Math.min(slides.length - 1,index));
+          slides.forEach((slide,i) => slide.classList.toggle("is-active",i === current));
+          if (progress && slides.length > 1) progress.textContent = `${current + 1} of ${slides.length}`;
+          if (previous) previous.disabled = current === 0;
+          if (next) next.disabled = current === slides.length - 1;
+        };
+        if (previous) previous.addEventListener("click",() => show(current - 1));
+        if (next) next.addEventListener("click",() => show(current + 1));
+        panel.querySelector(".touch-close").addEventListener("click",() => panel.classList.remove("is-open"));
+        show(0);
+      });
+      document.querySelectorAll("[data-touch-panel]").forEach((target) => {
+        target.addEventListener("click",() => {
+          document.querySelectorAll(".touch-panel").forEach((panel) => panel.classList.remove("is-open"));
+          document.getElementById(target.dataset.touchPanel)?.classList.add("is-open");
+        });
+      });
+      const projectCards = Array.from(document.querySelectorAll("#scroll-projects .project"));
+      const projectCount = document.querySelector(".project-count");
+      let activeProject = 0;
+      const showProject = (index) => {
+        activeProject = (index + projectCards.length) % projectCards.length;
+        projectCards.forEach((card,i) => card.classList.toggle("is-active",i === activeProject));
+        if (projectCount) projectCount.textContent = `${activeProject + 1} of ${projectCards.length}`;
+      };
+      document.getElementById("project-previous")?.addEventListener("click",() => showProject(activeProject - 1));
+      document.getElementById("project-next")?.addEventListener("click",() => showProject(activeProject + 1));
+      showProject(0);
     })();
   </script>
 </body>
