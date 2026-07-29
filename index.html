@@ -1414,8 +1414,127 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
     .apex-site > .topbar { display: flex !important; }
     .apex-site > .hero { display: grid !important; }
     .apex-site > .trust-strip,
+    .apex-site > .major-project,
     .apex-site > .experience,
     .apex-site > .contact { display: block !important; }
+    .apex-site .major-project {
+      padding: clamp(64px,8vw,112px) 0;
+      background: #edf2f5;
+      color: #0a0d10;
+      overflow: hidden;
+    }
+    .apex-site .major-project-head {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(280px,.8fr);
+      gap: clamp(28px,6vw,90px);
+      align-items: end;
+      margin-bottom: clamp(28px,4vw,52px);
+    }
+    .apex-site .major-project .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+      margin: 0 0 14px;
+      padding: 8px 11px;
+      background: #087fe8;
+      color: #fff;
+      font-size: .64rem;
+      line-height: 1;
+      letter-spacing: .14em;
+      white-space: nowrap;
+    }
+    .apex-site .major-project .eyebrow::before { display: none; }
+    .apex-site .major-project h2 {
+      max-width: 820px;
+      margin: 10px 0 0;
+      font-size: clamp(2.4rem,6vw,5.8rem);
+      line-height: .92;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+    .apex-site .major-project-intro {
+      margin: 0;
+      color: #4f5c66;
+      font-size: clamp(1rem,1.5vw,1.25rem);
+      line-height: 1.6;
+    }
+    .apex-site .major-project-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.45fr) minmax(290px,.55fr);
+      gap: 14px;
+    }
+    .apex-site .major-project-image {
+      position: relative;
+      min-height: 260px;
+      overflow: hidden;
+      background: #101820;
+    }
+    .apex-site .major-project-image:first-child {
+      grid-row: span 2;
+      min-height: 650px;
+    }
+    .apex-site .major-project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .apex-site .major-project-image:hover img { transform: scale(1.015); }
+    .apex-site .major-project-image::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 42%;
+      background: linear-gradient(transparent,rgba(2,7,11,.86));
+      pointer-events: none;
+    }
+    .apex-site .major-project-label {
+      position: absolute;
+      z-index: 1;
+      left: clamp(18px,3vw,34px);
+      right: clamp(18px,3vw,34px);
+      bottom: clamp(18px,3vw,30px);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .apex-site .major-project-label strong {
+      display: block;
+      margin-top: 7px;
+      font-size: clamp(1.15rem,2vw,1.7rem);
+      letter-spacing: -.02em;
+    }
+    .apex-site .major-project-facts {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin-top: 14px;
+      border: 1px solid #aebbc4;
+      background: #fff;
+    }
+    .apex-site .major-project-fact {
+      min-height: 112px;
+      padding: 22px clamp(18px,2.5vw,30px);
+      border-right: 1px solid #c7d0d6;
+    }
+    .apex-site .major-project-fact:last-child { border-right: 0; }
+    .apex-site .major-project-fact span {
+      display: block;
+      color: #60707b;
+      font-size: .65rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .apex-site .major-project-fact strong {
+      display: block;
+      margin-top: 10px;
+      font-size: clamp(.92rem,1.4vw,1.15rem);
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
     .apex-site .experience-nav {
       position: static;
       flex-wrap: wrap;
@@ -1454,6 +1573,40 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
     .apex-site .project-touch-controls button:last-child { background: #087fe8; border-color: #087fe8; color: #fff; }
     .apex-site .project-count { color: #52606a; font-size: .7rem; font-weight: 900; letter-spacing: .1em; text-align: center; text-transform: uppercase; }
     @media (max-width:760px) {
+      .apex-site .major-project { padding: 58px 0; }
+      .apex-site .major-project-head { grid-template-columns: 1fr; gap: 20px; }
+      .apex-site .major-project h2 { font-size: clamp(2.55rem,13vw,4.25rem); }
+      .apex-site .major-project-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .apex-site .major-project-image:first-child {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+      }
+      .apex-site .major-project-image:not(:first-child) {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+      }
+      .apex-site .major-project-image img { object-position: center; }
+      .apex-site .major-project-label {
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+        font-size: .58rem;
+        letter-spacing: .12em;
+      }
+      .apex-site .major-project-label strong {
+        margin-top: 5px;
+        font-size: 1.08rem;
+        line-height: 1.15;
+      }
+      .apex-site .systems-bar div:last-child { grid-column: 1 / -1; }
+      .apex-site .major-project-facts { grid-template-columns: 1fr; }
+      .apex-site .major-project-fact { min-height: 0; border-right: 0; border-bottom: 1px solid #c7d0d6; }
+      .apex-site .major-project-fact:last-child { border-bottom: 0; }
       .apex-site .trust-grid { grid-template-columns: 1fr; overflow: visible; }
       .apex-site .trust-item { min-height: 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
       .apex-site .systems-bar { grid-template-columns: repeat(2,1fr); overflow: visible; }
@@ -1584,6 +1737,37 @@ Description: Apex Power LLC provides temporary-power deployment, generator field
       </div>
       <div class="scroll-indicator" data-scroll-for="scroll-trust" aria-hidden="true"><span></span></div>
     </div>
+
+    <section class="major-project" id="major-project">
+      <div class="wrap">
+        <div class="major-project-head">
+          <div>
+            <p class="eyebrow">Featured project</p>
+            <h2>Power when the grid needs it most.</h2>
+          </div>
+          <p class="major-project-intro">Apex Power completed this peak-shaving project to help the utility meet critical demand and reduce the risk of rolling brownouts.</p>
+        </div>
+        <div class="major-project-grid" aria-label="Completed peak-shaving project">
+          <figure class="major-project-image">
+            <img src="assets/peak-shave-facility.jpeg" alt="Aerial view of a completed peak-shaving power site" loading="eager">
+            <figcaption class="major-project-label">Completed infrastructure<strong>Utility peak-shaving site</strong></figcaption>
+          </figure>
+          <figure class="major-project-image">
+            <img src="assets/peak-shave-site.jpg" alt="Rows of power equipment at the completed project site" loading="lazy">
+            <figcaption class="major-project-label">Site scale<strong>Major field deployment</strong></figcaption>
+          </figure>
+          <figure class="major-project-image">
+            <img src="assets/peak-shave-battery-system.jpg" alt="Battery backup equipment installed at the project site" loading="lazy">
+            <figcaption class="major-project-label">System detail<strong>Battery backup equipment</strong></figcaption>
+          </figure>
+        </div>
+        <div class="major-project-facts" aria-label="Project highlights">
+          <div class="major-project-fact"><span>Purpose</span><strong>Peak demand support</strong></div>
+          <div class="major-project-fact"><span>Grid impact</span><strong>Helps prevent rolling brownouts</strong></div>
+          <div class="major-project-fact"><span>Status</span><strong>Major project completed</strong></div>
+        </div>
+      </div>
+    </section>
 
     <div class="experience" id="explore">
       <div class="wrap">
