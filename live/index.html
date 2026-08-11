@@ -83,12 +83,12 @@
       return val(fields,...displayNames);
     };
     const initials=(name="")=>name.trim().split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase()||"AP";
-    const shortSite=(name="")=>name.replace(/^AGGREKO\s+/i,"").replace(/^EQUIPMENT\s*SHARE\s+/i,"").replace(/^UNITED RENTALS\s+/i,"");
+    const shortSite=(name="")=>/^UNITED BR$/i.test(name.trim())?"G99":name.replace(/^AGGREKO\s+/i,"").replace(/^EQUIPMENT\s*SHARE\s+/i,"").replace(/^UNITED RENTALS\s+/i,"");
     const slug=(v="")=>v.toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
     const mapLocations={
       "seattle":[11,9],"salt lake city":[23,41],"denver":[33,46],"las vegas":[14,49],"los angeles":[8,58],"phoenix":[20,62],
       "midland":[37,72],"haskell":[43,70],"dallas":[46,71],"austin":[46,80],"san antonio":[44,84],"houston":[51,79],
-      "livingston":[56,77],"lafayette":[58,79],"new iberia":[59,82],"new orleans":[61,81],"kansas city":[52,47],"chicago":[63,42],"atlanta":[72,70]
+      "livingston":[56,77],"baton rouge":[59,78],"united br":[59,78],"g99":[59,78],"lafayette":[58,79],"new iberia":[59,82],"new orleans":[61,81],"kansas city":[52,47],"chicago":[63,42],"atlanta":[72,70]
     };
     function mapLocation(site){const text=slug(`${site.location||""} ${site.name||""}`);for(const [place,position] of Object.entries(mapLocations)){if(text.includes(place))return{place,position}}return null}
     const setLoading=(on)=>$("loading").classList.toggle("hidden",!on);
