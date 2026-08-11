@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -57,8 +58,8 @@
 
     const config={auth:{clientId:"69751df8-3248-468e-8cdb-95b476095e55",authority:"https://login.microsoftonline.com/995f2c0e-a08a-41e8-9e84-bb8e099d1f82",redirectUri:"https://apexpowerllc.org/live/",postLogoutRedirectUri:"https://apexpowerllc.org/live/"},cache:{cacheLocation:"localStorage"}};
     const scopes=["User.Read","Sites.ReadWrite.All"];
-    const sharepointHost="netorgft8789087-my.sharepoint.com";
-    const sharepointPath="/personal/nash_apexpowerllc_org";
+    const sharepointHost="netorgft8789087.sharepoint.com";
+    const sharepointPath="/sites/ApexPowerFieldOperations";
     const listNames={employees:"Apex Employees",worksites:"Apex Worksites",assignments:"Apex Assignments"};
     const msalApp=new PublicClientApplication(config);
     await msalApp.initialize();
