@@ -139,7 +139,12 @@
     function assignmentFor(employee){return state.assignments.find(a=>(employee.employeeId&&a.employeeId===employee.employeeId)||slug(a.employeeName)===slug(employee.name))}
     function effectiveSite(employee){return assignmentFor(employee)?.worksiteName||employee.currentSite||"Unassigned"}
     function crewForSite(site){return state.employees.filter(e=>slug(effectiveSite(e))===slug(site.name)||slug(effectiveSite(e))===slug(site.worksiteId))}
-    function available(employee){const text=`${employee.availability} ${employee.status} ${assignmentFor(employee)?.availability||""}`.toLowerCase();return /available|off|standby|unassigned/.test(text)}
+    function available(employee){
+      const site=slug(effectiveSite(employee));
+      if(site&&site!=="unassigned"&&site!=="not set")return false;
+      const statuses=[employee.availability,assignmentFor(employee)?.availability].map(slug).filter(Boolean);
+      return statuses.some(status=>["available","off","standby","unassigned"].includes(status));
+    }
     function moves(site){return String(site.moves||"").split(/\n|;/).map(x=>x.trim()).filter(x=>x&&!/^no\s/i.test(x))}
     function siteChannel(site){const keys=[site.name,shortSite(site.name),site.location,site.worksiteId].map(slug).filter(Boolean);return state.teams.channels.find(channel=>keys.includes(slug(channel.displayName)))||null}
     async function initializeTeams(interactive=false){
