@@ -93,7 +93,8 @@
       "midland":[37,72],"haskell":[43,70],"dallas":[46,71],"hubbard":[45,75],"austin":[46,80],"san antonio":[44,84],"houston":[51,79],
       "bossier city":[53,73],"lake charles":[55,82],"livingston":[56,77],"baton rouge":[59,78],"lafayette":[58,79],"new iberia":[59,82],"new orleans":[61,81],"kansas city":[52,47],"waukesha":[60,38],"chicago":[63,42],"atlanta":[72,70]
     };
-    function mapLocation(site){const text=slug(`${site.location||""} ${site.name||""}`);for(const [place,position] of Object.entries(mapLocations)){if(text.includes(place))return{place,position}}return null}
+    const worksiteLocationOverrides={"72d":"waukesha"};
+    function mapLocation(site){const identity=slug(`${site.name||""} ${site.worksiteId||""}`);for(const [code,place] of Object.entries(worksiteLocationOverrides)){if(identity.includes(code))return{place,position:mapLocations[place]}}const text=slug(`${site.location||""} ${site.name||""}`);for(const [place,position] of Object.entries(mapLocations)){if(text.includes(place))return{place,position}}return null}
     function spreadClusters(clusters){
       const placed=[];
       for(const cluster of clusters){
